@@ -3,32 +3,45 @@ package com.company.Comportement;
 import com.company.Deplacement;
 
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 public class ComportementCyclique implements InterfaceComportement {
 
     private Deplacement deplacement;
-    private int mouvement[] = {-1, 0};
-    private int mouvement2[] = {1, 0};
+    private ArrayList<int[]> lstMouvements;
+    private int cursor;
 
-    public ComportementCyclique() {
-        this.deplacement = new Deplacement(
-                this.mouvement[0] + this.mouvement2[0], this.mouvement[1] + this.mouvement2[1]
-        );
+    public ComportementCyclique(ArrayList<int[]> lstMouvements) {
+        this.cursor = 0;
+        this.lstMouvements = lstMouvements;
     }
 
     public ComportementCyclique(ComportementCyclique comportementCyclique) {
-        this.deplacement.setX(comportementCyclique.deplacement.getX());
-        this.deplacement.setY(comportementCyclique.deplacement.getY());
+        this(comportementCyclique.getLstMouvements());
     }
 
     @Override
     public Deplacement getProchainMouvement() {
+        this.manageCursor();
+        this.setDeplacement();
+        this.cursor++;
         return this.deplacement;
     }
 
-    /*private ComportementCyclique getComportementInverse() {
+    private void manageCursor() {
+        if (this.cursor >= this.lstMouvements.size()) {
+            this.cursor = 0;
+        }
+    }
 
-    }*/
+    private ComportementCyclique getComportementInverse() {
+        ArrayList<int[]> lstMouvementsInverses = this.getLstMouvements();
+        for (int[] mouvement : lstMouvementsInverses) {
+            mouvement[0] = mouvement[0] * -1;
+            mouvement[1] = mouvement[1] * -1;
+        }
+        return new ComportementCyclique(lstMouvementsInverses);
+    }
 
     public Deplacement getDeplacement() {
         return deplacement;
@@ -36,5 +49,20 @@ public class ComportementCyclique implements InterfaceComportement {
 
     public void setDeplacement(Deplacement deplacement) {
         this.deplacement = deplacement;
+    }
+
+    private void setDeplacement() {
+        this.deplacement = new Deplacement(
+                this.lstMouvements.get(this.cursor)[0],
+                this.lstMouvements.get(this.cursor)[1]
+        );
+    }
+
+    public ArrayList<int[]> getLstMouvements() {
+        return lstMouvements;
+    }
+
+    public void setLstMouvements(ArrayList<int[]> lstMouvements) {
+        this.lstMouvements = lstMouvements;
     }
 }

@@ -1,7 +1,5 @@
 package com.company;
 
-import javafx.geometry.Pos;
-
 public class Deplacement {
     private int x;
     private int y;
