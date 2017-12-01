@@ -15,8 +15,19 @@ public class Main {
         d.add(new int[]{5,2});
         d.add(new int[]{2,3});
         EntiteMobile entiteMobile1 = new EntiteMobile(new ComportementCyclique(d));
-        monde.ajoutEntiteMobile(entiteMobile1);
-        monde.lanceIteration(20);
+        EntiteMobile entiteMobile5 = new EntiteMobile(new ComportementCyclique(d));/*
+        EntiteMobile entiteMobile2 = new EntiteMobile(new ComportementToutDroit("HAUT"));
+        EntiteMobile entiteMobile3 = new EntiteMobile(new ComportementAleatoire(1, 4));
+        EntiteMobile entiteMobile4 = new EntiteMobile(
+                new ComportementCombine(new ComportementAleatoire(1, 3),
+                        new ComportementToutDroit("HAUT"))
+        );*/
+        monde.ajoutEntiteMobile(entiteMobile1);/*
+        monde.ajoutEntiteMobile(entiteMobile2);
+        monde.ajoutEntiteMobile(entiteMobile3);
+        monde.ajoutEntiteMobile(entiteMobile4);*/
+        monde.ajoutEntiteMobile(entiteMobile5);
+        monde.lanceIteration(20, false);
 
      /*   EntiteMobile entiteMobile1 = new EntiteMobile(new ComportementToutDroit("HAUT"));
         EntiteMobile entiteMobile2 = new EntiteMobile(new ComportementToutDroit("HAUT"));

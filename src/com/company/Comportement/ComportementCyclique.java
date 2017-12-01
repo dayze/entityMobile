@@ -4,6 +4,8 @@ import com.company.Deplacement;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 public class ComportementCyclique implements InterfaceComportement {
 
@@ -34,12 +36,14 @@ public class ComportementCyclique implements InterfaceComportement {
         }
     }
 
-    private ComportementCyclique getComportementInverse() {
+    public ComportementCyclique getComportementInverse() {
         ArrayList<int[]> lstMouvementsInverses = this.getLstMouvements();
         for (int[] mouvement : lstMouvementsInverses) {
-            mouvement[0] = mouvement[0] * -1;
-            mouvement[1] = mouvement[1] * -1;
+            int tmp = mouvement[0];
+            mouvement[0] = mouvement[1] * -1;
+            mouvement[1] = tmp * -1;
         }
+        Collections.reverse(lstMouvementsInverses);
         return new ComportementCyclique(lstMouvementsInverses);
     }
 
