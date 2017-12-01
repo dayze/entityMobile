@@ -22,7 +22,7 @@ public class EntiteeMobile {
         /* Génération aléatoire des valeurs pour X et Y */
         this.x = (int) (Math.random() * 100);
         this.y = (int) (Math.random() * 100);
-        System.out.println("L'entitée mobile a été créée avec les coordonnées x: " + this.x + " et y:" + this.y);
+        System.out.println("@ L'entitée mobile a été créée avec les coordonnées x: " + this.x + " et y: " + this.y);
     }
 
     // ******************************

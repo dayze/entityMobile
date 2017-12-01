@@ -31,7 +31,7 @@ public class ComportementToutDroit extends AbstractComportement implements Inter
      */
     @Override
     public Deplacement getProchainMouvement() {
-        int[] mouvement = new int[]{};
+        int[] mouvement = new int[2];
         switch (this.direction) {
             case HAUT:
                 mouvement[0] = 0;
@@ -43,7 +43,7 @@ public class ComportementToutDroit extends AbstractComportement implements Inter
                 break;
             case GAUCHE:
                 mouvement[0] = -1;
-                mouvement[1] = -1;
+                mouvement[1] = 0;
                 break;
             case DROITE:
                 mouvement[0] = 1;
