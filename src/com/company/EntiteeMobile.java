@@ -19,17 +19,19 @@ public class EntiteeMobile {
     public EntiteeMobile(InterfaceComportement comportement) {
         this.deplacementsHistorique = new ArrayList<>();
         this.comportement = comportement;
+        /* Génération aléatoire des valeurs pour X et Y */
         this.x = (int) (Math.random() * 100);
         this.y = (int) (Math.random() * 100);
-       /* this.setX(1);
-        this.setY(12);*/
-        System.out.println("Le point a été créé a x: " + this.x + " y:" + this.y);
+        System.out.println("L'entitée mobile a été créée avec les coordonnées x: " + this.x + " et y:" + this.y);
     }
 
-    public InterfaceComportement getComportement() {
-        return comportement;
-    }
+    // ******************************
+    // Méthodes publiques
+    // ******************************
 
+    /**
+     * Permet de déplacer l'EntiteeMobile et d'ajouter le déplacement dans l'historique
+     */
     public void deplacer() {
         Deplacement deplacement = this.comportement.getProchainMouvement();
         this.setX(this.x + deplacement.getX());
@@ -37,8 +39,16 @@ public class EntiteeMobile {
         this.deplacementsHistorique.add(deplacement);
     }
 
+    // ******************************
+    // Getters et setters
+    // ******************************
+
     public void setComportement(InterfaceComportement comportement) {
         this.comportement = comportement;
+    }
+
+    public InterfaceComportement getComportement() {
+        return comportement;
     }
 
     public int getX() {

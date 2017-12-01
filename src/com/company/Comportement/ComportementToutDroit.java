@@ -4,11 +4,18 @@ import com.company.Deplacement;
 
 import java.util.HashMap;
 
-public class ComportementToutDroit implements InterfaceComportement {
+public class ComportementToutDroit extends AbstractComportement implements InterfaceComportement {
+
     private HashMap<String, int[]> directions = new HashMap<>();
     private String direction;
 
+    /**
+     * Constructeur
+     *
+     * @param direction :
+     */
     public ComportementToutDroit(String direction) {
+        super();
         this.directions.put("HAUT", new int[]{0, 1});
         this.directions.put("BAS", new int[]{0, -1});
         this.directions.put("GAUCHE", new int[]{-1, 0});
@@ -16,11 +23,21 @@ public class ComportementToutDroit implements InterfaceComportement {
         this.direction = direction;
     }
 
+    // ******************************
+    // Méthodes publiques
+    // ******************************
+
+    /**
+     * Retourne le prochain mouvement en
+     *
+     * @return deplacement : Instance de la classe Deplacement
+     */
     @Override
     public Deplacement getProchainMouvement() {
         int[] xy = this.directions.get(this.direction);
-        Deplacement deplacement = new Deplacement(xy[0], xy[1]);
-        return deplacement;
+        this.deplacement.setX(xy[0]);
+        this.deplacement.setY(xy[1]);
+        return this.deplacement;
     }
 
 
