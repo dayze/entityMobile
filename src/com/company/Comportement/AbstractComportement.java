@@ -6,6 +6,9 @@ public class AbstractComportement {
 
     protected Deplacement deplacement;
 
+    /**
+     * Constructeur
+     */
     public AbstractComportement(){
         this.deplacement = new Deplacement();
     }

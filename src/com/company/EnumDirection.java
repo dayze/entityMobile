@@ -1,7 +1,11 @@
 package com.company;
 
+/**
+ * Enumeration pour le comportement tout droit
+ */
 public enum EnumDirection {
-    Vert,
-    Orange,
-    Rouge
+    HAUT,
+    BAS,
+    GAUCHE,
+    DROITE
 }
