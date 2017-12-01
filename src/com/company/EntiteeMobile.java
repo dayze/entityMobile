@@ -5,13 +5,18 @@ import com.company.Comportement.InterfaceComportement;
 
 import java.util.ArrayList;
 
-public class EntiteMobile {
+public class EntiteeMobile {
     private InterfaceComportement comportement;
     private int x;
     private int y;
     private ArrayList<Deplacement> deplacementsHistorique;
 
-    public EntiteMobile(InterfaceComportement comportement) {
+    /**
+     * Constructor
+     *
+     * @param comportement : Interface Comportement
+     */
+    public EntiteeMobile(InterfaceComportement comportement) {
         this.deplacementsHistorique = new ArrayList<>();
         this.comportement = comportement;
         this.x = (int) (Math.random() * 100);

@@ -1,9 +1,6 @@
 package com.company;
 
-import com.company.Comportement.ComportementAleatoire;
-import com.company.Comportement.ComportementCombine;
 import com.company.Comportement.ComportementCyclique;
-import com.company.Comportement.ComportementToutDroit;
 
 import java.util.ArrayList;
 
@@ -14,11 +11,11 @@ public class Main {
         ArrayList<int[]> d = new ArrayList<>();
         d.add(new int[]{5,2});
         d.add(new int[]{2,3});
-        EntiteMobile entiteMobile1 = new EntiteMobile(new ComportementCyclique(d));
-        EntiteMobile entiteMobile5 = new EntiteMobile(new ComportementCyclique(d));/*
-        EntiteMobile entiteMobile2 = new EntiteMobile(new ComportementToutDroit("HAUT"));
-        EntiteMobile entiteMobile3 = new EntiteMobile(new ComportementAleatoire(1, 4));
-        EntiteMobile entiteMobile4 = new EntiteMobile(
+        EntiteeMobile entiteMobile1 = new EntiteeMobile(new ComportementCyclique(d));
+        EntiteeMobile entiteMobile5 = new EntiteeMobile(new ComportementCyclique(d));/*
+        EntiteeMobile entiteMobile2 = new EntiteeMobile(new ComportementToutDroit("HAUT"));
+        EntiteeMobile entiteMobile3 = new EntiteeMobile(new ComportementAleatoire(1, 4));
+        EntiteeMobile entiteMobile4 = new EntiteeMobile(
                 new ComportementCombine(new ComportementAleatoire(1, 3),
                         new ComportementToutDroit("HAUT"))
         );*/
@@ -29,10 +26,10 @@ public class Main {
         monde.ajoutEntiteMobile(entiteMobile5);
         monde.lanceIteration(20, false);
 
-     /*   EntiteMobile entiteMobile1 = new EntiteMobile(new ComportementToutDroit("HAUT"));
-        EntiteMobile entiteMobile2 = new EntiteMobile(new ComportementToutDroit("HAUT"));
-        EntiteMobile entiteMobile3 = new EntiteMobile(new ComportementAleatoire(1, 4));
-        EntiteMobile entiteMobile4 = new EntiteMobile(
+     /*   EntiteeMobile entiteMobile1 = new EntiteeMobile(new ComportementToutDroit("HAUT"));
+        EntiteeMobile entiteMobile2 = new EntiteeMobile(new ComportementToutDroit("HAUT"));
+        EntiteeMobile entiteMobile3 = new EntiteeMobile(new ComportementAleatoire(1, 4));
+        EntiteeMobile entiteMobile4 = new EntiteeMobile(
                 new ComportementCombine(new ComportementAleatoire(1, 3),
                         new ComportementToutDroit("HAUT"))
         );

@@ -4,67 +4,71 @@ import java.util.ArrayList;
 
 public class Monde {
 
-    private ArrayList<EntiteMobile> entiteMobiles;
+    private ArrayList<EntiteeMobile> entiteesMobiles;
 
-    /* Constructeur */
+    /**
+     * Constructeur
+     */
     public Monde() {
-        this.entiteMobiles = new ArrayList<>();
+        this.entiteesMobiles = new ArrayList<>();
     }
 
-    /* Permet d'ajouter une entité mobile */
-    public void ajoutEntiteMobile(EntiteMobile em) {
-        this.entiteMobiles.add(em);
+    // ******************************
+    // Méthodes publiques
+    // ******************************
 
+    /**
+     * Permet d'ajouter une EntiteeMobile à l'Arraylist entiteesMobiles.
+     * @param em : instance de la classe EntiteeMobile
+     */
+    public void ajoutEntiteMobile(EntiteeMobile em) {
+        this.entiteesMobiles.add(em);
     }
 
-
+    /**
+     * Parcours l' Arraylist entiteesMobiles et effectue un déplacement n fois.
+     * @param n : nombre d'iterations
+     */
     public void lanceIteration(int n) {
         this.lanceIteration(n, true);
     }
 
-    /* Parcours la liste d'entités mobiles du monde */
+    /**
+     * Parcours l' Arraylist entiteesMobiles et effectue un déplacement n fois.
+     * @param n : nombre d'iterations
+     * @param collisions : affiche les collisions si true
+     */
     public void lanceIteration(int n, boolean collisions) {
         System.out.println("début de l'itération");
         for (int i = 0; i < n; i++) {
-            int indexEntiteMobile = 0;
-            for (EntiteMobile em : this.entiteMobiles) {
-                System.out.println("Iteration pour entiteMobile n°" + ++indexEntiteMobile);
-                System.out.println("Deplacement n°" + i);
+            int indexEntiteeMobile = 0;
+            for (EntiteeMobile em : this.entiteesMobiles) {
+                System.out.println("Iteration pour l'EntiteeMobile n°" + ++indexEntiteeMobile);
+                System.out.println("Déplacement n° " + i);
                 em.deplacer();
-                System.out.println("s'est déplacé x:" + em.getX() + " y:" + em.getY());
+                System.out.println("s'est déplacée avec x:" + em.getX() + " y:" + em.getY());
                 if (collisions) {
-                    this.connaitreCollisions(em, indexEntiteMobile);
+                    this.connaitreCollisions(em, indexEntiteeMobile);
                 }
             }
         }
     }
-/*
-    public void connaitreCollisions() {
-        int indexEntiteMobile = 0;
-        for (EntiteMobile em : this.entiteMobiles) {
-            int nbCollisions = 0;
-            indexEntiteMobile++;
-            for (EntiteMobile em2 : this.entiteMobiles) {
-                if (!em2.equals(em)) {
-                    if (em.getX() == em2.getX() && em.getY() == em2.getY()) {
-                        nbCollisions++;
-                    }
-                }
-            }
-            System.out.println("Entite n°" + indexEntiteMobile + " a subit " + nbCollisions + " collision");
-        }
-    }*/
 
-    public void connaitreCollisions(EntiteMobile em, int indexEntiteMobile) {
+    /**
+     * Permet d'affichr les collisions entre EntiteesMobiles
+     * @param em : une instance de la classe EntiteMobile
+     * @param indexEntiteeMobile : ordre de l'EntiteeMobile dans l'ArrayList
+     */
+    public void connaitreCollisions(EntiteeMobile em, int indexEntiteeMobile) {
         int nbCollisions = 0;
-        for (EntiteMobile em2 : this.entiteMobiles) {
+        for (EntiteeMobile em2 : this.entiteesMobiles) {
             if (!em2.equals(em)) {
                 if (em.getX() == em2.getX() && em.getY() == em2.getY()) {
                     nbCollisions++;
                 }
             }
         }
-        System.out.println("Entite n°" + indexEntiteMobile + " a subit " + nbCollisions + " collision");
+        System.out.println("Entitee n°" + indexEntiteeMobile + " a subit " + nbCollisions + " collision(s).");
     }
 }
 
