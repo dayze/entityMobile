@@ -5,7 +5,7 @@ import com.company.EnumDirection;
 
 import java.util.HashMap;
 
-public class ComportementToutDroit extends AbstractComportement implements InterfaceComportement {
+public class ComportementToutDroit extends AbstractComportement {
 
     private HashMap<String, int[]> directions = new HashMap<>();
     private EnumDirection direction;

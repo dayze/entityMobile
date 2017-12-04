@@ -2,7 +2,7 @@ package com.company.Comportement;
 
 import com.company.Deplacement;
 
-public class ComportementCombine extends AbstractComportement implements InterfaceComportement {
+public class ComportementCombine extends AbstractComportement {
 
     private InterfaceComportement comportement1;
     private InterfaceComportement comportement2;

@@ -4,7 +4,7 @@ import com.company.Deplacement;
 
 import java.util.Random;
 
-public class ComportementAleatoire extends AbstractComportement implements InterfaceComportement {
+public class ComportementAleatoire extends AbstractComportement{
 
     private int minValue;
     private int maxValue;
