@@ -6,6 +6,7 @@ import com.company.Comportement.InterfaceComportement;
 import java.util.ArrayList;
 
 public class EntiteeMobile {
+
     private InterfaceComportement comportement;
     private int x;
     private int y;
@@ -43,7 +44,7 @@ public class EntiteeMobile {
     // Getters et setters
     // ******************************
 
-    public void setComportement(InterfaceComportement comportement) {
+    public void setComportement (InterfaceComportement comportement) {
         this.comportement = comportement;
     }
 
