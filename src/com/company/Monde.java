@@ -76,6 +76,24 @@ public class Monde {
         }
         System.out.println("=> a subit " + nbCollisions + " collision(s). \n");
     }
+
+    public void connaitreCollisions2() {
+        for (ArrayList<Deplacement> listDeplacementParIteration : this.deplacementGlobalHistorique) {
+            int i = 0;
+            for (Deplacement deplacementTeste : listDeplacementParIteration) {
+                int j = 0;
+                for (Deplacement deplacementCompare : listDeplacementParIteration) {
+                    if (j > i) {
+                        if (deplacementTeste.getX() == deplacementCompare.getX() && deplacementTeste.getY() == deplacementCompare.getY()) {
+                            System.out.println("L'entitée mobile N°" + i + " a connu une collision avec l'entitée mobile N°" + j + " \n");
+                        }
+                    }
+                    j++;
+                }
+                i++;
+            }
+        }
+    }
 }
 
 
