@@ -56,7 +56,7 @@ public class Main {
         // ******************************
         // TEST
         // ******************************
-        monde.lanceIteration(20);
+        monde.lanceIteration(20, false);
 
     }
 }

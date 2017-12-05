@@ -5,13 +5,14 @@ import java.util.ArrayList;
 public class Monde {
 
     private ArrayList<EntiteeMobile> entiteesMobiles;
-    private ArrayList<ArrayList<Deplacement>> deplacementGlobalHistorique;
+    private ArrayList<ArrayList<Deplacement>> deplacementGlobalHistorique; // second algorithme
 
     /**
      * Constructeur
      */
     public Monde() {
         this.entiteesMobiles = new ArrayList<>();
+        this.deplacementGlobalHistorique = new ArrayList<>();
     }
 
     // ******************************
@@ -46,8 +47,10 @@ public class Monde {
         System.out.println("\n ### Début de l'itération \n");
         for (int i = 0; i < n; i++) {
             int indexEntiteeMobile = 0;
+            ArrayList<Deplacement> lstDeplacement = new ArrayList<>(); // second algorithme
             for (EntiteeMobile em : this.entiteesMobiles) {
-                System.out.println("## Iteration pour l'EntiteeMobile n°" + ++indexEntiteeMobile);
+                ++indexEntiteeMobile;
+                System.out.println("## Iteration pour l'EntiteeMobile n°" + indexEntiteeMobile);
                 System.out.println("# Déplacement n° " + i);
                 em.deplacer();
                 System.out.println("=> s'est déplacée avec x:" + em.getX() + " y: " + em.getY());
@@ -56,8 +59,12 @@ public class Monde {
                 } else {
                     System.out.println("\n");
                 }
+                lstDeplacement.add(new Deplacement(em.getX(), em.getY())); // second algorithme
+
             }
+            this.deplacementGlobalHistorique.add(lstDeplacement); // second algorithme
         }
+
     }
 
     /**
