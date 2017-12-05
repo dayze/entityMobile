@@ -68,7 +68,7 @@ public class Monde {
     }
 
     /**
-     * Permet d'affichr les collisions entre EntiteesMobiles
+     * Permet d'affichr les collisions entre EntiteesMobiles (version 1)
      *
      * @param em : une instance de la classe EntiteMobile
      */
@@ -84,6 +84,9 @@ public class Monde {
         System.out.println("=> a subit " + nbCollisions + " collision(s). \n");
     }
 
+    /**
+     * Permet d'affichr les collisions entre EntiteesMobiles (version 2)
+     */
     public void connaitreCollisions2() {
         for (ArrayList<Deplacement> listDeplacementParIteration : this.deplacementGlobalHistorique) {
             int i = 0;
@@ -92,7 +95,7 @@ public class Monde {
                 for (Deplacement deplacementCompare : listDeplacementParIteration) {
                     if (j > i) {
                         if (deplacementTeste.getX() == deplacementCompare.getX() && deplacementTeste.getY() == deplacementCompare.getY()) {
-                            System.out.println("L'entitée mobile N°" + i + " a connu une collision avec l'entitée mobile N°" + j + " \n");
+                            System.out.println("L'entitée mobile N°" + i + " a connu une collision avec l'entitée mobile N°" + j + " aux coordonnées x:" + deplacementCompare.getX() + " et y:" + deplacementCompare.getY() + " \n");
                         }
                     }
                     j++;

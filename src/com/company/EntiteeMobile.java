@@ -21,8 +21,10 @@ public class EntiteeMobile {
         this.deplacementsHistorique = new ArrayList<>();
         this.comportement = comportement;
         /* Génération aléatoire des valeurs pour X et Y */
-        this.x = (int) (Math.random() * 100);
-        this.y = (int) (Math.random() * 100);
+        /*this.x = (int) (Math.random() * 100);
+        this.y = (int) (Math.random() * 100);*/
+        this.x = 1;
+        this.y = 2;
         System.out.println("@ L'entitée mobile a été créée avec les coordonnées x: " + this.x + " et y: " + this.y);
     }
 
