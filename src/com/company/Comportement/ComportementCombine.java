@@ -10,8 +10,8 @@ public class ComportementCombine extends AbstractComportement {
     /**
      * Constructeur
      *
-     * @param comportement1 : instance de InterfaceComportement
-     * @param comportement2 : instance de InterfaceComportement
+     * @param comportement1 : instance de InterfaceCollision
+     * @param comportement2 : instance de InterfaceCollision
      */
     public ComportementCombine(InterfaceComportement comportement1, InterfaceComportement comportement2) {
         super();

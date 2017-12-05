@@ -19,7 +19,6 @@ public class Main {
 
         ComportementAleatoire ca = new ComportementAleatoire(2, 5);
         ComportementToutDroit ctd = new ComportementToutDroit(EnumDirection.GAUCHE);
-       /* ComportementToutDroit ctd2 = new ComportementToutDroit(EnumDirection.GAUCHE);*/
         ComportementCombine cb = new ComportementCombine(ca, ctd);
 
         ArrayList<int[]> lstMouvements = new ArrayList<>();
@@ -36,7 +35,6 @@ public class Main {
 
          /* Entitée tout droit */
         EntiteeMobile emToutDroit = new EntiteeMobile(ctd);
-        EntiteeMobile emToutDroit2 = new EntiteeMobile(ctd);
 
         /* Entitée combinée */
         EntiteeMobile emCombine = new EntiteeMobile(cb);
@@ -48,19 +46,16 @@ public class Main {
         // ******************************
         // ajout des entitées
         // ******************************
-/*
         monde.ajoutEntiteMobile(emAleatoire);
         monde.ajoutEntiteMobile(emCombine);
-        monde.ajoutEntiteMobile(emCyclique);*/
+        monde.ajoutEntiteMobile(emCyclique);
         monde.ajoutEntiteMobile(emToutDroit);
-        monde.ajoutEntiteMobile(emToutDroit2);
 
 
         // ******************************
         // TEST
         // ******************************
-        monde.lanceIteration(20, true);
-        monde.connaitreCollisions2();
+        monde.lanceIteration(20, false, true);
 
     }
 }
