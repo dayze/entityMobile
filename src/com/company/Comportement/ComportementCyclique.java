@@ -5,7 +5,7 @@ import com.company.Deplacement;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class ComportementCyclique extends AbstractComportement implements InterfaceComportement {
+public class ComportementCyclique extends AbstractComportement {
 
     private ArrayList<int[]> lstMouvements;
     private int curseur; /* permet de récupérer le nième mouvement */
