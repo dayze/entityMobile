@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Monde {
 
     private ArrayList<EntiteeMobile> entiteesMobiles;
+    private ArrayList<ArrayList<Deplacement>> deplacementGlobalHistorique;
 
     /**
      * Constructeur
